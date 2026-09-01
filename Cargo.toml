@@ -12,7 +12,3 @@ rusqlite = { version = "0.31", features = ["bundled"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 chrono = { version = "0.4", features = ["serde"] }
-
-# Local development override (optional when developing fly-common locally)
-[patch."https://github.com/radmuffin/fly-common"]
-fly_common = { path = "../fly-common" }
