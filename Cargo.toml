@@ -2,12 +2,17 @@
 name = "fly-app-template"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
 
 [dependencies]
-fly_common = { path = "../fly-common" }
+fly_common = { git = "https://github.com/radmuffin/fly-common" }
 axum = { version = "0.7", features = ["macros"] }
 tokio = { version = "1.0", features = ["full"] }
 rusqlite = { version = "0.31", features = ["bundled"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 chrono = { version = "0.4", features = ["serde"] }
+
+# Local development override (optional when developing fly-common locally)
+[patch."https://github.com/radmuffin/fly-common"]
+fly_common = { path = "../fly-common" }
