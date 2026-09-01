@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fly App Starter</title>
+  <link rel="stylesheet" href="/_fly/fly-base.css">
+  <style>
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .form-box {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid var(--fly-border);
+      border-radius: var(--fly-radius);
+      background: var(--fly-bg-surface);
+      color: var(--fly-text-primary);
+      font-size: 1rem;
+    }
+    button {
+      padding: 10px 18px;
+      background: var(--fly-primary);
+      color: white;
+      border: none;
+      border-radius: var(--fly-radius);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover {
+      background: var(--fly-primary-hover);
+    }
+    .note-card {
+      background: var(--fly-bg-surface);
+      border: 1px solid var(--fly-border);
+      border-radius: var(--fly-radius);
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      box-shadow: var(--fly-shadow);
+    }
+    .note-date {
+      font-size: 0.8rem;
+      color: var(--fly-text-secondary);
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>📝 My Notes</h2>
+      <button type="button" id="theme-btn" style="background: transparent; color: var(--fly-text-primary); border: 1px solid var(--fly-border);">🌓 Theme</button>
+    </div>
+
+    <form id="note-form" class="form-box">
+      <input type="text" id="note-input" placeholder="Type a note and hit enter..." required autocomplete="off">
+      <button type="submit">Add</button>
+    </form>
+
+    <div id="notes-list"></div>
+  </div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
