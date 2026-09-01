@@ -22,5 +22,7 @@ Welcome! This repository serves as the baseline starter template for single-page
    - Use the `UserToken` extractor in Axum route handlers to scope queries per anonymous user.
 3. **Database Migrations**:
    - Register new tables and schema migrations inside `FlyDb::run_migrations` on startup in `src/main.rs`.
-4. **Deploying to Fly.io**:
+4. **Testing & Pre-Push Hooks**:
+   - Run `npm run test:affected` before committing or run `npm run setup:hooks` to install the pre-push git hook.
+5. **Deploying to Fly.io**:
    - Always allocate a persistent SQLite volume (`fly volumes create app_data --size 1`) before first deployment.

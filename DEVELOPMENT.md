@@ -6,9 +6,16 @@
 # Start local development server
 cargo run
 
-# Run checks & linter
-cargo check
+# Run only affected tests & linters based on git diff
+npm run test:affected
+
+# Install git pre-push hook
+npm run setup:hooks
+
+# Run all tests & checks
+cargo test
 cargo clippy --all-targets
+cargo fmt --all -- --check
 ```
 Open [http://localhost:3000](http://localhost:3000) to view the application.
 

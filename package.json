@@ -1,0 +1,14 @@
+{
+  "name": "fly-app-template",
+  "version": "0.1.0",
+  "description": "Production-ready starter template for Fly.io Axum + SQLite web applications",
+  "scripts": {
+    "start": "cargo run",
+    "test": "cargo test",
+    "test:affected": "node scripts/test-affected.js",
+    "setup:hooks": "node -e \"const fs=require('fs');if(fs.existsSync('.git')){fs.mkdirSync('.git/hooks',{recursive:true});fs.writeFileSync('.git/hooks/pre-push','#!/bin/sh\\necho \\\"⚡ [Pre-Push] Running affected tests...\\\"\\nnpm run test:affected\\n',{mode:0o755});console.log('✔ Pre-push hook installed!');}\"",
+    "fmt": "cargo fmt --all",
+    "clippy": "cargo clippy --all-targets"
+  },
+  "license": "MIT OR Apache-2.0"
+}
